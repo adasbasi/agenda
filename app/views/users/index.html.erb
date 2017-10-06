@@ -1,0 +1,21 @@
+<h2>Kullanıcılar - Random Olarak Üretilmekte</h2>
+<%= link_to "Kullanıcı Ekle", users_create_path %>
+<%= link_to "Tamamını Sil", users_destroy_all_path %>
+<%= link_to "Yenile", root_path %>
+
+<table>
+	<tr>
+		<th></th>
+		<th>Adı</th>
+		<th>Soyadı</th>
+		<th>Email</th>
+	</tr>
+	<% @users.each_with_index do |u, i| %>
+		<tr>
+			<td><%= i + 1 %></td>
+			<td><%= u.first_name %></td>
+			<td><%= u.last_name %></td>
+			<td><%= u.email %></td>
+		</tr>
+	<% end %>
+</table>
